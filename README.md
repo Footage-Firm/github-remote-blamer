@@ -1,12 +1,12 @@
-# github-blame-remote
+# github-remote-blamer
 
-`github-blame-remote` is a package to remotely perform a [git blame](https://git-scm.com/docs/git-blame) for a git 
+`github-remote-blamer` is a package to remotely perform a [git blame](https://git-scm.com/docs/git-blame) for a git 
 repository hosted on [GitHub](github.com). No local copy of the repository is needed.
 
 ## QuickStart
 
 ```javascript
-const GithubRemoteBlamer = require('github-blame-remote');
+const GithubRemoteBlamer = require('github-remote-blamer');
 const blamer = new GithubRemoteBlamer(); //need GITHUB_API_TOKEN environment variable set
 
 const organization = 'expressjs';
@@ -33,12 +33,12 @@ Output:
 Requires node version 8 or higher.
 
 ```sh
-$ npm install --save github-blame-remote
+$ npm install --save github-remote-blamer
 ```
 
 ## Configuration
 
-`github-blame-remote` requires the `GITHUB_API_TOKEN` environment variable to be set to a valid github api token with read 
+`github-remote-blamer` requires the `GITHUB_API_TOKEN` environment variable to be set to a valid github api token with read 
 access to the repository, users, and organization.
 
 Additional debugging can be enabled by setting `GITHUB_BLAME_REMOTE_DEBUG` to `true`.
