@@ -19,7 +19,7 @@ blamer.blame(organization, repository, oid, path, lineNumber)
     .then(blameInfo => console.log(blameInfo));
 ```
 Output:
-```javascript
+```sh
 { line: 7,
   oid: '8eb95ae57973b2cbe7778bc2e10450a380ca2efe',
   date: 2017-03-05T18:44:22.000Z,
@@ -66,8 +66,8 @@ lines, the array will have an object for each line, in order of the lines as the
 blameInfo = blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', [23,24,26])
     .then(blameInfo => console.log(blameInfo));
 ```
-
-```javascript
+Output:
+```sh
 [ { line: 23,
     oid: 'ca306eace1befc9d290cd5f79be8e6ba7c01b917',
     date: 2014-07-03T14:49:53.000Z,
