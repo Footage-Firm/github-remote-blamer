@@ -1,0 +1,40 @@
+{
+  "name": "github-blame-remote",
+  "version": "0.1.0",
+  "description": "git blame using the GitHub API--no local copy of the repository needed",
+  "main": "lib/blamer.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10",
+    "node-github-graphql": "^0.2.6"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-moment": "^0.1.0",
+    "dotenv": "^5.0.1",
+    "mocha": "^5.1.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Footage-Firm/github-blame-remote.git"
+  },
+  "keywords": [
+    "git",
+    "blame",
+    "github",
+    "remote"
+  ],
+  "author": "Aaron Silverman",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Footage-Firm/github-blame-remote/issues"
+  },
+  "homepage": "https://github.com/Footage-Firm/github-blame-remote#readme"
+}

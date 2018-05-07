@@ -16,7 +16,7 @@ describe('blame()', () => {
 
     it('should work with a single line', async () => {
 
-        const info = await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', 7)
+        const info = await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', 7);
         expect(info).to.be.an('object');
         expect(info.line).to.equal(7);
         expect(info.oid).to.equal('8eb95ae57973b2cbe7778bc2e10450a380ca2efe');
@@ -26,9 +26,9 @@ describe('blame()', () => {
 
     }).timeout(5000);
 
-    it('should work with multiple lines', async () => {
+    it('should work with multiple lines, regardless of order', async () => {
 
-        const info = await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', [23,24,26])
+        const info = await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', [26,24,23]);
 
         expect(info).to.be.an('array');
         expect(info).to.have.length(3);
@@ -62,7 +62,7 @@ describe('blame()', () => {
     it('should throw an error for invalid path', async () => {
         let caughtErr = null;
         try {
-            await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'does/not/exist.js', 3)
+            await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'does/not/exist.js', 3);
         } catch(err) {
             caughtErr = err;
         }
@@ -73,7 +73,7 @@ describe('blame()', () => {
     it('should throw an error for invalid line number', async () => {
         let caughtErr = null;
         try {
-            await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', 1234567)
+            await blamer.blame('expressjs', 'express', '40e04ec7a6d365a7e083b0fdf7f9d2c7afc036a0', 'examples/auth/index.js', 1234567);
         } catch(err) {
             caughtErr = err;
         }
