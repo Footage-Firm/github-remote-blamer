@@ -8,7 +8,6 @@
     "test": "test"
   },
   "dependencies": {
-    "bluebird": "^3.5.1",
     "lodash": "^4.17.10",
     "node-github-graphql": "^0.2.6"
   },

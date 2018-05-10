@@ -10,7 +10,11 @@ chai.use(chaiMoment);
 const expect = require('chai').expect;
 
 const GithubRemoteBlamer = require('../lib/blamer');
-const blamer = new GithubRemoteBlamer();
+
+const debug = process.env.GITHUB_BLAME_REMOTE_DEBUG === 'true';
+const token = process.env.GITHUB_API_TOKEN;
+
+const blamer = new GithubRemoteBlamer(token, {debug});
 
 describe('blame()', () => {
 
@@ -24,7 +28,7 @@ describe('blame()', () => {
         expect(info.name).to.equal('chainhelen');
         expect(info.email).to.equal('chainhelen@gmail.com');
 
-    }).timeout(5000);
+    });
 
     it('should work with multiple lines, regardless of order', async () => {
 

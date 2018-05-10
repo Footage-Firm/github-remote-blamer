@@ -7,7 +7,7 @@ repository hosted on [GitHub](github.com). No local copy of the repository is ne
 
 ```javascript
 const GithubRemoteBlamer = require('github-remote-blamer');
-const blamer = new GithubRemoteBlamer(); //need GITHUB_API_TOKEN environment variable set
+const blamer = new GithubRemoteBlamer('MY_GITHUB_API_TOKEN');
 
 const organization = 'expressjs';
 const repository = 'express';
@@ -38,10 +38,14 @@ $ npm install --save github-remote-blamer
 
 ## Configuration
 
-`github-remote-blamer` requires the `GITHUB_API_TOKEN` environment variable to be set to a valid github api token with read 
-access to the repository, users, and organization.
+`GithubRemoteBlamer`'s constructor takes two parameters:
+* **apiToken** - Github api token with read access to the repository, users, and organization. This is required.
+* **options** - an object with additional options. Currently `debug` is the only supported option. Set to `true` for 
+additional debug statements.
 
-Additional debugging can be enabled by setting `GITHUB_BLAME_REMOTE_DEBUG` to `true`.
+```javascript
+const blamer = new GithubRemoteBlamer(myGitHubApiToken, {debug: true});
+```
 
 ## Usage
 
