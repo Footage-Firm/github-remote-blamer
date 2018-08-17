@@ -1,6 +1,6 @@
 {
   "name": "github-blame-remote",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "git blame using the GitHub API--no local copy of the repository needed",
   "main": "lib/blamer.js",
   "directories": {
